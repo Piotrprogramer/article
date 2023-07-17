@@ -19,7 +19,7 @@ $articles = Article::getPage($conn, $paginator->limit, $paginator->offset, true)
         <?php foreach ($articles as $article) : ?>
             <li>
                 <article>
-                    <h2><a href="article.php?id=<?= $article['id']; ?>"><?= htmlspecialchars($article['title']); ?></a></h2>
+                    <h2><a href="article.php?id=<?= $article['id']; ?>"><?= htmlspecialchars($article['title'] ?? ''); ?></a></h2>
 
                     <time datetime="<?= $article['published_at'] ?>"><?php
                         $datetime = new DateTime($article['published_at']);
@@ -29,12 +29,12 @@ $articles = Article::getPage($conn, $paginator->limit, $paginator->offset, true)
                     <?php if ($article['category_names']) : ?>
                         <p>Categories:
                             <?php foreach ($article['category_names'] as $name) : ?>
-                                <?= htmlspecialchars($name); ?>
+                                <?= htmlspecialchars($name ?? ''); ?>
                             <?php endforeach; ?>
                         </p>
                     <?php endif; ?>
                     
-                    <p><?= htmlspecialchars($article['content']); ?></p>
+                    <p><?= htmlspecialchars($article['content'] ?? ''); ?></p>
                 </article>
             </li>
         <?php endforeach; ?>

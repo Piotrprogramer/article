@@ -305,20 +305,12 @@ class Article
         }
 
         if ($this->published_at != '') {
-            $date_time = date_create_from_format('Y-m-d H:i:s', $this->published_at);
-            
-            if ($date_time === false) {
+            $date_errors = date_get_last_errors();
 
+            if ($date_errors['warning_count'] > 0) {
                 $this->errors[] = 'Invalid date and time';
-
-            } else {
-
-                $date_errors = date_get_last_errors();
-
-                if ($date_errors['warning_count'] > 0) {
-                    $this->errors[] = 'Invalid date and time';
-                }
             }
+
         }
 
         return empty($this->errors);
@@ -392,7 +384,7 @@ class Article
 
         return $conn->query("SELECT COUNT(*) FROM article$condition")->fetchColumn();
     }
-    
+
     /**
      * Update the image file property
      *

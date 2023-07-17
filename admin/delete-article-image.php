@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             unlink("../uploads/$previous_image");
         }
 
-        Url::redirect("/admin/edit-article-image.php?id={$article->id}");
+        Url::redirect("/article/admin/edit-article-image.php?id={$article->id}");
 
     }
 }
@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <form method="post">
 
-    <p>Are you sure?</p>
+    <p>Are you sure ?</p>
 
     <button>Delete</button>
     <a href="edit-article-image.php?id=<?= $article->id; ?>">Cancel</a>
