@@ -5,3 +5,37 @@ ul#index {
 #message {
     height: 10em;
 }
+
+body
+{
+	/*background-color: gray !important;*/
+    background-image: url("triangle-mosaic.webp") !important;
+
+}
+
+
+
+h1{
+	font-size: 48px;
+	color:rgb(211, 148, 46) !important;
+}
+
+h2{
+	color:rgb(211, 148, 46) !important;
+}
+
+th{
+	color:rgb(211, 148, 46) !important;
+}
+
+a{
+    color:rgb(211, 148, 46) !important; 
+}
+
+a:hover {
+    color:rgb(195, 81, 19) !important; 
+}
+
+span{
+    color:rgb(211, 148, 46) !important; 
+}
