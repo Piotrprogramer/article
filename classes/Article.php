@@ -306,11 +306,6 @@ class Article
 
         if ($this->published_at != '') {
             $date_errors = date_get_last_errors();
-
-            if ($date_errors['warning_count'] > 0) {
-                $this->errors[] = 'Invalid date and time';
-            }
-
         }
 
         return empty($this->errors);
