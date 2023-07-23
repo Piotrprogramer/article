@@ -21,7 +21,7 @@
     <div class="form-group">
         <label for="content">Content</label>
         <label for="published_at">Publication date and time</label>
-        <input type="datetime-local" name="published_at"  value="<?= htmlspecialchars($article->published_at ?? '' ); ?>">
+        <input class="form-control" name="published_at" id="published_at" value="<?= htmlspecialchars($article->published_at ?? ''); ?>">
     </div>
 
     <fieldset>
@@ -31,7 +31,7 @@
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" name="category[]" value="<?= $category['id'] ?>" id="category<?= $category['id'] ?>"
                        <?php if (in_array($category['id'], $category_ids)) :?>checked<?php endif; ?>>
-                <label class="form-check-label" for="category<?= $category['id'] ?>"><?= htmlspecialchars($category['name']) ?></label>
+                <label class="form-check-label" for="category<?= $category['id'] ?>"><?= htmlspecialchars($category['name'] ?? '') ?></label>
             </div>
         <?php endforeach; ?>
     </fieldset>

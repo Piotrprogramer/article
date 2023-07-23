@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $article->setCategories($conn, $category_ids);
 
-        Url::redirect("/article/admin/article.php?id={$article->id}");
+        Url::redirect("/admin/article.php?id={$article->id}");
 
     }
 }

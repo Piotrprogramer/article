@@ -17,13 +17,13 @@ $("a.delete").on("click", function(e) {
 
 /**
  * Add a method to validate a date time string
-
+ */
 $.validator.addMethod("dateTime", function(value, element) {
 
     return (value == "") || ! isNaN(Date.parse(value));
 
 }, "Must be a valid date and time");
- */
+
 /**
  * Validate the article form
  */
@@ -35,6 +35,9 @@ $("#formArticle").validate({
 		content: {
 			required: true
 		},
+		published_at: {
+			dateTime: true
+		}
 	}
 });
 
@@ -47,7 +50,7 @@ $("button.publish").on("click", function(e) {
     var button = $(this);
 
     $.ajax({
-        url: 'publish-article.php',
+        url: '/admin/publish-article.php',
         type: 'POST',
         data: {id: id}
     })
@@ -58,7 +61,7 @@ $("button.publish").on("click", function(e) {
     })
     .fail(function(data) {
 
-        alert("An error ");
+        alert("An error occurred");
 
     });
 });

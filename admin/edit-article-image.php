@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     unlink("../uploads/$previous_image");
                 }
 
-                Url::redirect("/article/admin/edit-article-image.php?id={$article->id}");
+                Url::redirect("/admin/edit-article-image.php?id={$article->id}");
             }
 
         } else {
@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php if ($article->image_file) : ?>
     <img src="/uploads/<?= $article->image_file; ?>">
 
-    <a  href="delete-article-image.php?id=<?= $article->id; ?>">Delete</a>
+    <a class="delete" href="delete-article-image.php?id=<?= $article->id; ?>">Delete</a>
 
 <?php endif; ?>
 
