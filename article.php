@@ -32,7 +32,7 @@ if (isset($_GET['id'])) {
         <?php endif; ?>
 
         <?php if ($article[0]['image_file']) : ?>
-            <img src="/uploads/<?= $article[0]['image_file']; ?>">
+            <img src="/uploads/<?= $article[0]['image_file']; ?>" class="responsive">
         <?php endif; ?>
 
         <p><?= htmlspecialchars($article[0]['content']); ?></p>
